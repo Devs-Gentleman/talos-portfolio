@@ -24,22 +24,17 @@ The portfolio contains six brand design projects and Nexus, a multithreaded HTTP
 
 ## Learning workflow
 
-- The user is learning to read code, understand it, and spot problems. They review the code; explain changes rather than merely completing them.
-- Work in small, reviewable steps: one feature at a time. Never build a whole level at once. Stop after each level for the user's review.
-- Before asking the user to run anything, ask them to predict what will happen.
-- After each change, explain every function in short, simple sentences: first say what it does, then say what happens after it runs.
-- After each change, give one thing to check or deliberately break as a test.
-- In each level, leave one small function for the user to write by hand. Mark it with a `TODO` comment explaining what it should do.
-- Do not silently fix the user's bugs. First point out where to look, then help if asked.
-- Do not start a level until the user approves the proposed folder structure or the previous level.
+- The user is a BSCS student aiming to become an AI-assisted design engineer, with a future interest in 3D web work. The goal is to build real software efficiently and understand enough to direct, review, debug, modify, and maintain it.
+- Generate boilerplate, repetitive code, and complete self-contained features when that is the most useful approach. Do not force manual typing or divide work into artificially tiny steps.
+- Keep changes cohesive and reviewable. Avoid dumping large amounts of unexplained code; explain meaningful chunks rather than narrating every line.
+- For each meaningful implementation, explain what is being built, what it does, the important concepts, how it fits the rest of the project, and key technical decisions.
+- Encourage inspection and experimentation. Ask for predictions or offer small modification challenges when useful, but do not turn every task into a quiz or require a hand-written TODO function.
+- When debugging, identify the cause, explain the fix and why it works, and point out how to recognize similar issues.
+- Do not silently remove existing behavior or overwrite working code. Explain meaningful impacts and challenge questionable decisions honestly.
+- Adjust explanation depth as the user demonstrates understanding. Prioritize practical learning, engineering judgment, and sustainable progress over speed alone or excessive theory.
 
-## Planned levels
+## Project learning path
 
-1. HTML and CSS structure for all pages, including CSS variables for colours and fonts.
-2. Store projects in one data file. Build cards from data. Add filter buttons using a state-to-render pattern and event delegation.
-3. Build one project page that reads `?id=` from the URL and shows a not-found state for unknown IDs.
-4. Add hover effects, a glitch text effect, and scroll reveals using CSS and `IntersectionObserver`.
-5. Add page transitions using FLIP, the Web Animations API, and the History API.
-6. Add a validated contact form that sends a POST request to a form service and shows loading, success, and error states. Add lazy-loaded images and aim for a Lighthouse score of 90+.
+Build the first portfolio with vanilla HTML, CSS, and JavaScript. Progress from semantic page structure and styling to responsive layouts, project data and rendering, URL-driven case studies, interactions, and a validated contact form. Add advanced transitions or other polish only when the fundamentals are working and the feature is valuable.
 
-Implement only the current level. Do not move to the next level until the user has reviewed and approved the current one.
+Work feature by feature. Make practical progress without requiring approval after every small edit; pause for review when a meaningful milestone or decision calls for it. Do not introduce frameworks prematurely. Later, help the user move toward TypeScript, React, Next.js, and Three.js when relevant, without treating mastery of every vanilla detail as a prerequisite.

@@ -1,8 +1,8 @@
-# Talos.io Portfolio
+# My Portfolio
 
 ## Project overview
 
-Talos.io is a portfolio for a design brand focused on cyberpunk, futuristic, and gaming brand identities. The visual direction is dark, cold, and minimal, with section labels such as `[ BRANDING // GAMING ]`. Use placeholder content and imagery until the owner supplies real material. Follow references in the `design` folder when available.
+This is the owner's portfolio, temporarily named "My Portfolio." It will showcase cyberpunk, futuristic, and gaming brand identities. The visual direction is dark, cold, and minimal, with section labels such as `[ BRANDING // GAMING ]`. Use placeholder content and imagery until the owner supplies real material. Follow references in the `design` folder when available.
 
 The planned portfolio includes Home, Work, a project case study, About, and Contact. It will feature six brand design projects and Nexus, a multithreaded HTTP server written in C++.
 
@@ -49,11 +49,11 @@ Build the first version in vanilla technologies. Later, introduce TypeScript, Re
 ## Current status
 
 - The proposed folder structure was approved. Current files are still at the project root for HTML, with styles in `css`.
-- Level 1 is in progress. The home page is the first page being styled; the other pages have not been built yet.
-- `index.html` links to `css/styles.css`. The stylesheet currently defines design tokens and styles the existing home-page header, hero, footer, skip link, and narrow-screen navigation.
+- Level 1 is in progress. The Home, Work, project case study, About, and Contact pages now share a header, navigation, footer, design tokens, and responsive styles. The displayed portfolio name is temporarily "My Portfolio."
+- `index.html` and the four secondary pages link to `css/styles.css`. Work cards and Nexus case-study sections are static HTML placeholders; project data rendering, filters, URL parameters, interactions, and contact form submission are later steps.
 - The skip link is intentionally visually moved above the viewport until it receives keyboard focus. After reloading, press `Tab` before clicking elsewhere to reveal it. Clicking empty space moves focus away, so the link stays hidden; this is expected behavior.
 - The current breakpoint is `38rem`. At or below it, the logo and navigation stack vertically; the navigation links remain in a row where they fit and wrap onto another row if needed.
-- The current site has not been committed or pushed.
+- The initial Home page CSS foundation and project handoff documentation have been pushed as the first checkpoint.
 
 ## Current files
 
@@ -64,4 +64,4 @@ Build the first version in vanilla technologies. Later, introduce TypeScript, Re
 
 ## Next practical step
 
-Review the Home page appearance at desktop and narrow widths, and confirm keyboard focus behavior. Then refine the foundation if needed before reusing it for the other pages. Keep the work within Level 1 until the basic page structure and styles are reviewed.
+Review all five pages at desktop and narrow widths. Check navigation between pages, keyboard focus on links, and the project cards' case-study links. Refine the shared foundation before starting project-data behavior.

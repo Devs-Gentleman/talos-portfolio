@@ -1,8 +1,8 @@
-# Talos.io Project Instructions
+# My Portfolio Project Instructions
 
 ## Project
 
-Talos.io is a portfolio for a design brand focused on cyberpunk, futuristic, and gaming brand identities. The visual style is dark, cold, and minimal. Section labels use bracket notation such as `[ BRANDING // GAMING ]`. Do not use emojis. Follow designs in the `/design` folder. Use placeholder text and images until real content is provided.
+This is a portfolio temporarily named "My Portfolio," focused on cyberpunk, futuristic, and gaming brand identities. The visual style is dark, cold, and minimal. Section labels use bracket notation such as `[ BRANDING // GAMING ]`. Do not use emojis. Follow designs in the `/design` folder. Use placeholder text and images until real content is provided.
 
 Pages:
 - Home

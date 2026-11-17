@@ -27,7 +27,7 @@ Be an honest technical mentor. Identify root causes when debugging, explain fixe
 
 ## Running locally
 
-Use a simple static HTTP server; no build step is needed. If Python is installed, run `py -m http.server 8000` from the project folder, then open `http://localhost:8000`. Later JavaScript ES modules should be tested through a local server rather than opened directly with a `file://` URL.
+Use a simple static HTTP server; no build step is needed. In VS Code, the Live Server extension can serve the site; right-click an HTML page and choose **Open with Live Server**. Alternatively, if Python is installed, run `py -m http.server 8000` from the project folder, then open `http://localhost:8000`. JavaScript ES modules must be tested through a local server, not directly from a `file://` URL; browsers block module imports in that context.
 
 ## Collaboration and continuity
 
@@ -49,8 +49,10 @@ Build the first version in vanilla technologies. Later, introduce TypeScript, Re
 ## Current status
 
 - The proposed folder structure was approved. Current files are still at the project root for HTML, with styles in `css`.
-- Level 1 is in progress. The Home, Work, project case study, About, and Contact pages now share a header, navigation, footer, design tokens, and responsive styles. The displayed portfolio name is temporarily "My Portfolio."
-- `index.html` and the four secondary pages link to `css/styles.css`. Work cards and Nexus case-study sections are static HTML placeholders; project data rendering, filters, URL parameters, interactions, and contact form submission are later steps.
+- Level 1 is complete: the Home, Work, project case study, About, and Contact pages share a header, navigation, footer, design tokens, and responsive styles. The displayed portfolio name is temporarily "My Portfolio."
+- Level 2 is in progress. `work.html` loads project records from `js/projects.js`, renders cards with `js/work.js`, and provides All, Branding, and Software filters.
+- The project grid is generated from data rather than duplicated in HTML. Only Nexus links to the current placeholder case-study page. URL-driven project selection, interactions, and contact form submission are later steps.
+- The Work page was initially opened from disk and its modules were blocked by the browser. The owner installed VS Code Live Server and confirmed the page works when served over HTTP.
 - The skip link is intentionally visually moved above the viewport until it receives keyboard focus. After reloading, press `Tab` before clicking elsewhere to reveal it. Clicking empty space moves focus away, so the link stays hidden; this is expected behavior.
 - The current breakpoint is `38rem`. At or below it, the logo and navigation stack vertically; the navigation links remain in a row where they fit and wrap onto another row if needed.
 - The initial Home page CSS foundation and project handoff documentation have been pushed as the first checkpoint.
@@ -59,9 +61,13 @@ Build the first version in vanilla technologies. Later, introduce TypeScript, Re
 
 - `index.html` — initial Home page and stylesheet link.
 - `css/styles.css` — shared design tokens and initial Home page styles.
+- `work.html` — Work page with project filters and a dynamic grid mount point.
+- `js/projects.js` — project records used by the Work page.
+- `js/work.js` — project card rendering and filter behavior.
+- `project.html`, `about.html`, `contact.html` — supporting static pages.
 - `CLAUDE.md` — assistant-specific project and collaboration instructions.
 - `README.md` — project context, learning goals, roadmap, and current status.
 
 ## Next practical step
 
-Review all five pages at desktop and narrow widths. Check navigation between pages, keyboard focus on links, and the project cards' case-study links. Refine the shared foundation before starting project-data behavior.
+Review the Work page filters at desktop and narrow widths. Confirm All shows seven cards, Branding shows six, and Software shows Nexus. Check that the selected filter is announced through its pressed state and that Nexus links to the case study.

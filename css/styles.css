@@ -133,11 +133,45 @@ h1 {
   color: var(--color-muted);
 }
 
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem;
-  padding-bottom: 5rem;
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    padding-bottom: 5rem;
+}
+
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.filter-button {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.25rem;
+  background: transparent;
+  color: var(--color-muted);
+  font: inherit;
+  cursor: pointer;
+}
+
+.filter-button:hover,
+.filter-button[aria-pressed="true"] {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.filter-button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.project-count {
+  min-height: 1.6em;
+  color: var(--color-muted);
+  font-size: 0.875rem;
 }
 
 .project-card {
@@ -173,6 +207,11 @@ h1 {
   font-family: var(--font-heading);
   font-size: clamp(1.35rem, 3vw, 2rem);
   line-height: 1.2;
+}
+
+.project-card__body h2 a {
+  text-decoration-color: var(--color-accent);
+  text-underline-offset: 0.2em;
 }
 
 .project-card__body > p:not(.label),

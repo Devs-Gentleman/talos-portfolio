@@ -50,8 +50,9 @@ Build the first version in vanilla technologies. Later, introduce TypeScript, Re
 
 - The proposed folder structure was approved. Current files are still at the project root for HTML, with styles in `css`.
 - Level 1 is complete: the Home, Work, project case study, About, and Contact pages share a header, navigation, footer, design tokens, and responsive styles. The displayed portfolio name is temporarily "My Portfolio."
-- Level 2 is in progress. `work.html` loads project records from `js/projects.js`, renders cards with `js/work.js`, and provides All, Branding, and Software filters.
-- The project grid is generated from data rather than duplicated in HTML. Only Nexus links to the current placeholder case-study page. URL-driven project selection, interactions, and contact form submission are later steps.
+- Level 2 is complete. `work.html` loads project records from `js/projects.js`, renders cards with `js/work.js`, and provides All, Branding, and Software filters.
+- Level 3 is in progress. Each project card opens `project.html?id=<project-id>`, and `js/project.js` finds the matching record using `URLSearchParams`.
+- The project grid is generated from data rather than duplicated in HTML. Missing or unknown IDs show a not-found state. Interactions and contact form submission are later steps.
 - The Work page was initially opened from disk and its modules were blocked by the browser. The owner installed VS Code Live Server and confirmed the page works when served over HTTP.
 - The skip link is intentionally visually moved above the viewport until it receives keyboard focus. After reloading, press `Tab` before clicking elsewhere to reveal it. Clicking empty space moves focus away, so the link stays hidden; this is expected behavior.
 - The current breakpoint is `38rem`. At or below it, the logo and navigation stack vertically; the navigation links remain in a row where they fit and wrap onto another row if needed.
@@ -64,10 +65,11 @@ Build the first version in vanilla technologies. Later, introduce TypeScript, Re
 - `work.html` — Work page with project filters and a dynamic grid mount point.
 - `js/projects.js` — project records used by the Work page.
 - `js/work.js` — project card rendering and filter behavior.
+- `js/project.js` — URL parameter lookup and dynamic project case-study rendering.
 - `project.html`, `about.html`, `contact.html` — supporting static pages.
 - `CLAUDE.md` — assistant-specific project and collaboration instructions.
 - `README.md` — project context, learning goals, roadmap, and current status.
 
 ## Next practical step
 
-Review the Work page filters at desktop and narrow widths. Confirm All shows seven cards, Branding shows six, and Software shows Nexus. Check that the selected filter is announced through its pressed state and that Nexus links to the case study.
+Review the Work page and open several project cards. Confirm that valid links open `project.html?id=<project-id>` and display the matching title. Test a missing ID, such as `project.html`, and an unknown ID, such as `project.html?id=unknown`, to confirm both show the not-found state. Return to Work and check the grid filters again.

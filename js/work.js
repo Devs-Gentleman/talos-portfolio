@@ -23,7 +23,7 @@ function createProjectCard(project) {
   const title = document.createElement("h2");
   if (project.caseStudyUrl) {
     const link = document.createElement("a");
-    link.href = project.caseStudyUrl;
+    link.href = `${project.caseStudyUrl}?id=${encodeURIComponent(project.id)}`;
     link.textContent = project.title;
     title.append(link);
   } else {

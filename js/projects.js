@@ -5,7 +5,14 @@ export const projects = [
     label: "[ BRAND IDENTITY // 01 ]",
     title: "Project One",
     description: "Placeholder summary for a future-facing brand identity project.",
-    caseStudyUrl: "project.html"
+    caseStudyUrl: "project.html",
+    role: "Brand designer (placeholder)",
+    year: "2026",
+    tools: ["Figma", "Illustrator", "Photoshop"],
+    problem: "Placeholder: describe the client challenge or design problem this project needed to solve.",
+    process: "Placeholder: explain the research, exploration, and design steps taken to develop the identity.",
+    result: "Placeholder: summarize the outcome, deliverables, or impact of the project.",
+    images: []
   },
   {
     id: "project-two",
@@ -53,6 +60,13 @@ export const projects = [
     label: "[ SOFTWARE // C++ ]",
     title: "Nexus",
     description: "A multithreaded HTTP server project. Case study details are placeholders.",
-    caseStudyUrl: "project.html"
+    caseStudyUrl: "project.html",
+    role: "C++ developer (placeholder)",
+    year: "2026",
+    tools: ["C++", "POSIX sockets", "Threads"],
+    problem: "Placeholder: describe what Nexus needed to handle and why a multithreaded HTTP server was the right solution.",
+    process: "Placeholder: explain how the server was designed, implemented, and tested.",
+    result: "Placeholder: summarize what works today, performance or reliability outcomes, and key lessons learned.",
+    images: []
   }
 ];

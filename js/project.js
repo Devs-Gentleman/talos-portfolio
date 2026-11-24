@@ -46,7 +46,16 @@ function renderProject(projectToRender) {
 
   const visual = document.createElement("div");
   visual.className = "case-study__visual";
-  visual.setAttribute("aria-hidden", "true");
+
+  const heroImage = Array.isArray(projectToRender.images) ? projectToRender.images[0] : null;
+  if (heroImage && heroImage.src) {
+    const img = document.createElement("img");
+    img.src = heroImage.src;
+    img.alt = heroImage.alt || `${projectToRender.title} project image`;
+    visual.append(img);
+  } else {
+    visual.setAttribute("aria-hidden", "true");
+  }
 
   const layout = document.createElement("div");
   layout.className = "case-study__layout";
@@ -73,41 +82,7 @@ function renderProject(projectToRender) {
   }
   sections.append(...sectionItems.map(([sectionLabel, title, text]) => createContentSection(sectionLabel, title, text)));
 
-  if (Array.isArray(projectToRender.images) && projectToRender.images.length > 0) {
-    const imagesSection = document.createElement("section");
-    imagesSection.className = "content-section case-study__images";
-
-    const imagesLabel = document.createElement("p");
-    imagesLabel.className = "label";
-    imagesLabel.textContent = "[ IMAGES ]";
-
-    const imagesHeading = document.createElement("h2");
-    imagesHeading.textContent = "Project visuals";
-
-    const gallery = document.createElement("div");
-    gallery.className = "case-study__gallery";
-
-    for (const image of projectToRender.images) {
-      const figure = document.createElement("figure");
-      figure.className = "case-study__figure";
-
-      const img = document.createElement("img");
-      img.src = image.src;
-      img.alt = image.alt || `${projectToRender.title} project image`;
-      figure.append(img);
-
-      if (image.caption) {
-        const caption = document.createElement("figcaption");
-        caption.textContent = image.caption;
-        figure.append(caption);
-      }
-
-      gallery.append(figure);
-    }
-
-    imagesSection.append(imagesLabel, imagesHeading, gallery);
-    sections.append(imagesSection);
-  }
+  // The first project image is shown in the main case-study visual above.
 
   const details = document.createElement("aside");
   details.className = "project-details";

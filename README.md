@@ -4,7 +4,7 @@
 
 This is the owner's portfolio, temporarily named "My Portfolio." It will showcase cyberpunk, futuristic, and gaming brand identities. The visual direction is dark, cold, and minimal, with section labels such as `[ BRANDING // GAMING ]`. Use placeholder content and imagery until the owner supplies real material. Follow references in the `design` folder when available.
 
-The planned portfolio includes Home, Work, a project case study, About, and Contact. It will feature six brand design projects and Nexus, a multithreaded HTTP server written in C++.
+The planned portfolio includes Home, Work, a project case study, About, and Contact. For now, it features one project: **MultiThreaded-HTTP-Server**, a multithreaded HTTP server written in C++. More projects can be added later when available.
 
 Use no emojis in the site's content or design.
 
@@ -48,28 +48,39 @@ Build the first version in vanilla technologies. Later, introduce TypeScript, Re
 
 ## Current status
 
-- The proposed folder structure was approved. Current files are still at the project root for HTML, with styles in `css`.
+- The proposed folder structure was approved. Current files are still at the project root for HTML, with styles in `css` and scripts/data in `js`.
 - Level 1 is complete: the Home, Work, project case study, About, and Contact pages share a header, navigation, footer, design tokens, and responsive styles. The displayed portfolio name is temporarily "My Portfolio."
 - Level 2 is complete. `work.html` loads project records from `js/projects.js`, renders cards with `js/work.js`, and provides All, Branding, and Software filters.
-- Level 3 is in progress. Each project card opens `project.html?id=<project-id>`, and `js/project.js` finds the matching record using `URLSearchParams`.
-- The project grid is generated from data rather than duplicated in HTML. Missing or unknown IDs show a not-found state. Interactions and contact form submission are later steps.
-- The Work page was initially opened from disk and its modules were blocked by the browser. The owner installed VS Code Live Server and confirmed the page works when served over HTTP.
+- Level 3 is complete. Each project card opens `project.html?id=<project-id>`, and `js/project.js` finds the matching record using `URLSearchParams`, renders the case study, and shows a clear not-found state for missing or unknown IDs. The owner has verified the expected behavior.
+- Roadmap Step 1 is complete: the site is deployed on Vercel and available on a public link.
+- Roadmap Step 2 is complete: `js/projects.js` includes richer per-project fields (`role`, `year`, `tools`, `problem`, `process`, `result`, `images`) for all projects, and `js/project.js` renders those details (with fallbacks) instead of the same generic case-study text.
+- The project grid and case-study pages are generated from data rather than duplicated in HTML. Interactions (Step 4) and contact form submission (Step 5) are later steps.
+- The Work page was initially opened from disk and its modules were blocked by the browser. The owner installed VS Code Live Server and confirmed the page works when served over HTTP. JavaScript ES modules must be tested through a local server, not `file://`.
 - The skip link is intentionally visually moved above the viewport until it receives keyboard focus. After reloading, press `Tab` before clicking elsewhere to reveal it. Clicking empty space moves focus away, so the link stays hidden; this is expected behavior.
 - The current breakpoint is `38rem`. At or below it, the logo and navigation stack vertically; the navigation links remain in a row where they fit and wrap onto another row if needed.
-- The initial Home page CSS foundation and project handoff documentation have been pushed as the first checkpoint.
+- Placeholder content and imagery are still used across the site until the owner supplies real material. No commits or pushes should be made without the owner's explicit approval.
 
 ## Current files
 
-- `index.html` — initial Home page and stylesheet link.
-- `css/styles.css` — shared design tokens and initial Home page styles.
-- `work.html` — Work page with project filters and a dynamic grid mount point.
-- `js/projects.js` — project records used by the Work page.
-- `js/work.js` — project card rendering and filter behavior.
-- `js/project.js` — URL parameter lookup and dynamic project case-study rendering.
-- `project.html`, `about.html`, `contact.html` — supporting static pages.
+- `index.html` — Home page (hero and intro; placeholder copy until real content is provided).
+- `css/styles.css` — shared design tokens, layout, and component styles (including case-study and image gallery styles).
+- `work.html` — Work page with project filters, live count, and a dynamic grid mount point.
+- `js/projects.js` — project records and per-project case-study fields (`role`, `year`, `tools`, `problem`, `process`, `result`, `images`).
+- `js/work.js` — project card rendering, filter state, and case-study links.
+- `project.html` — case-study page shell with a dynamic content mount.
+- `js/project.js` — URL parameter lookup, dynamic case-study rendering, and not-found state.
+- `about.html`, `contact.html` — supporting static pages (placeholder content; contact is a mailto link, not yet a form).
+- `ROADMAP.md` — planned steps from live deployment through v1 and beyond.
 - `CLAUDE.md` — assistant-specific project and collaboration instructions.
-- `README.md` — project context, learning goals, roadmap, and current status.
+- `README.md` — project context, learning goals, current status, and next steps.
 
 ## Next practical step
 
-Review the Work page and open several project cards. Confirm that valid links open `project.html?id=<project-id>` and display the matching title. Test a missing ID, such as `project.html`, and an unknown ID, such as `project.html?id=unknown`, to confirm both show the not-found state. Return to Work and check the grid filters again.
+**Roadmap Step 3: Real content** (can run alongside later work). This step depends on content you provide; placeholders must remain until you supply real material.
+
+1. **Provide real case-study content for `MultiThreaded-HTTP-Server`** in `js/projects.js`: `role`, `year`, `tools`, `problem`, `process`, `result`, and image details (`src` paths and descriptive `alt` text). Export/add images into the project (for example, an `assets/images` folder) when ready.
+2. **Provide real copy for [index.html](D:/Talos/index.html)** (hero label/heading/intro and CTA text, if changing) and **[about.html](D:/Talos/about.html)** (intro and section text) to replace placeholders.
+3. **Review** the updated pages in Live Server and confirm no placeholder text remains on the pages you plan to show people.
+4. **Add more projects later** by appending records to `js/projects.js` when you have work to show.
+
+When ready, share the text and image files/paths and I can wire them into the site in reviewable chunks. After Step 3 is sufficiently complete, the next build step is **Step 4 (motion)** per `ROADMAP.md` (hover effects, scroll reveal, hero glitch text), all respecting `prefers-reduced-motion`.

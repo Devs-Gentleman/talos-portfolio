@@ -11,7 +11,16 @@ function createProjectCard(project) {
 
   const visual = document.createElement("div");
   visual.className = "project-card__visual";
-  visual.setAttribute("aria-hidden", "true");
+
+  const thumbnail = Array.isArray(project.images) ? project.images[0] : null;
+  if (thumbnail && thumbnail.src) {
+    const img = document.createElement("img");
+    img.src = thumbnail.src;
+    img.alt = thumbnail.alt || `${project.title} project thumbnail`;
+    visual.append(img);
+  } else {
+    visual.setAttribute("aria-hidden", "true");
+  }
 
   const body = document.createElement("div");
   body.className = "project-card__body";

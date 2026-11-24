@@ -1,72 +1,22 @@
 export const projects = [
   {
-    id: "project-one",
-    category: "branding",
-    label: "[ BRAND IDENTITY // 01 ]",
-    title: "Project One",
-    description: "Placeholder summary for a future-facing brand identity project.",
-    caseStudyUrl: "project.html",
-    role: "Brand designer (placeholder)",
-    year: "2026",
-    tools: ["Figma", "Illustrator", "Photoshop"],
-    problem: "Placeholder: describe the client challenge or design problem this project needed to solve.",
-    process: "Placeholder: explain the research, exploration, and design steps taken to develop the identity.",
-    result: "Placeholder: summarize the outcome, deliverables, or impact of the project.",
-    images: []
-  },
-  {
-    id: "project-two",
-    category: "branding",
-    label: "[ BRAND IDENTITY // 02 ]",
-    title: "Project Two",
-    description: "Placeholder summary for a gaming brand identity project.",
-    caseStudyUrl: "project.html"
-  },
-  {
-    id: "project-three",
-    category: "branding",
-    label: "[ BRAND IDENTITY // 03 ]",
-    title: "Project Three",
-    description: "Placeholder summary for a technology brand identity project.",
-    caseStudyUrl: "project.html"
-  },
-  {
-    id: "project-four",
-    category: "branding",
-    label: "[ BRAND IDENTITY // 04 ]",
-    title: "Project Four",
-    description: "Placeholder summary for a future-facing brand identity project.",
-    caseStudyUrl: "project.html"
-  },
-  {
-    id: "project-five",
-    category: "branding",
-    label: "[ BRAND IDENTITY // 05 ]",
-    title: "Project Five",
-    description: "Placeholder summary for a gaming brand identity project.",
-    caseStudyUrl: "project.html"
-  },
-  {
-    id: "project-six",
-    category: "branding",
-    label: "[ BRAND IDENTITY // 06 ]",
-    title: "Project Six",
-    description: "Placeholder summary for a technology brand identity project.",
-    caseStudyUrl: "project.html"
-  },
-  {
-    id: "nexus",
+    id: "multithreaded-http-server",
     category: "software",
     label: "[ SOFTWARE // C++ ]",
-    title: "Nexus",
-    description: "A multithreaded HTTP server project. Case study details are placeholders.",
+    title: "MultiThreaded-HTTP-Server",
+    description: "A multithreaded HTTP server built in C++ to explore client-server communication, concurrency, and request handling from the ground up.",
     caseStudyUrl: "project.html",
-    role: "C++ developer (placeholder)",
+    role: "Independent Developer",
     year: "2026",
-    tools: ["C++", "POSIX sockets", "Threads"],
-    problem: "Placeholder: describe what Nexus needed to handle and why a multithreaded HTTP server was the right solution.",
-    process: "Placeholder: explain how the server was designed, implemented, and tested.",
-    result: "Placeholder: summarize what works today, performance or reliability outcomes, and key lessons learned.",
-    images: []
+    tools: ["C++17", "POSIX Sockets", "Linux APIs", "Make", "Python (Benchmarking)"],
+    problem: "Web servers and networking concepts often abstract away the underlying mechanics of client-server communication. I wanted to understand how HTTP requests are received, parsed, processed, and served, as well as how concurrency, connection handling, and server-side architecture work beyond the theoretical concepts taught in networking.",
+    process: "Developed the server incrementally, using documentation, AI-assisted research, and structured implementation plans to explore each layer of the system. Starting with TCP socket communication, I progressively implemented HTTP request parsing, response construction, static file serving, a thread pool, REST API endpoints, request logging, connection reuse, and a thread-safe file cache. Each phase was designed to build on the previous one, allowing me to study the underlying mechanisms, trade-offs, and behavior of a web server in practice.",
+    result: "Built a multithreaded HTTP server capable of serving static files, handling REST API requests, maintaining persistent connections, and caching file contents. More importantly, the project transformed networking concepts from abstract theory into practical understanding — strengthening my knowledge of TCP, HTTP, request-response architecture, concurrency, synchronization, and server-side systems through hands-on implementation and testing.",
+    images: [
+      {
+        src: "Projects%20Screenshot/Multithreaded%20HTTP%20Server.png",
+        alt: "Screenshot of the MultiThreaded-HTTP-Server GitHub repository page showing the project description and file structure"
+      }
+    ]
   }
 ];
